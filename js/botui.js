@@ -26,7 +26,7 @@ function bot_ui_ini() {
     }).then(function () {
         botui.message.add({
             delay: 1100,
-            content: "这里是 Zezhou.Sun"
+            content: "我是聿舟"
         }).then(function () {
             botui.message.add({
                 delay: 1100,
