@@ -103,3 +103,6 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
+
+live2d: ##自定义看板娘动画
+  enable: true

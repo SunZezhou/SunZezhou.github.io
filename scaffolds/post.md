@@ -2,8 +2,8 @@
 title: {{ title }}
 date: {{ date }}
 author: 聿舟
-avatar: 
-authorLink: [hojun.cn](https://sunzezhou.github.io)
+avatar: /images/avatar.jpg
+authorLink: https://sunzezhou.github.io
 authorAbout: 
 authorDesc: 
 categories: 

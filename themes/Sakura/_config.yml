@@ -6,7 +6,7 @@ favicon: /images/yu.ico    # 标签页logo
 avatar: /images/avatar.jpg     # 头像
 url: https://sunzezhou.github.io  # 头像链接
 description: Code Never Lies      # 个人签名
-cdn:      # 套用的CDN链接，后面有用，建议建立一个属于自己的图床，在后面的图片里 img:/icon/xxx.png 将被代替为 https://cdn.jsdelivr.net/gh/Natsuki-Kaede/Blog-Resources/ico
+cdn:  https://cdn.jsdelivr.net/gh/SunZezhou/cdn  # 套用的CDN链接，后面有用，建议建立一个属于自己的图床，在后面的图片里 img:/icon/xxx.png 将被代替为 https://cdn.jsdelivr.net/gh/Natsuki-Kaede/Blog-Resources/ico
 pjax: 1
 # 1开启
 mathjax: 0
@@ -29,7 +29,7 @@ menus:
   #   歌单: {path: /music/, fa: fa-headphones },
   #   图集: {path: /tags/图集/, fa: fa-photo }
   # } }
-  Academic: { path: /academic/, fa: fa-pencil-square-o faa-tada }
+  # Academic: { path: /academic/, fa: fa-pencil-square-o faa-tada }
   # 友人帐: { path: /links/, fa: fa-link faa-shake }
   # 赞赏: { path: /donate/, fa: fa-heart faa-pulse }
   About Me?: { path: /about/, fa: fa-leaf faa-wrench 
