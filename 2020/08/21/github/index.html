@@ -23,7 +23,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Mac更新Safari书签图标 | Zezhou.Sun&#39;s Blog</title>
+  <title itemprop="name">Github+jsDelivr搭建自己的免费cdn | Zezhou.Sun&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/yu.ico">
   
@@ -265,30 +265,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(/images/circuit_board.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/circuit_board.jpg">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      Mac更新Safari书签图标</h1>
-      <p class="entry-census">
-        <span>
-          <a href="">
-            <img src="/images/avatar.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="">聿舟</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2020-8-21
-        <!-- <span class="bull">·</span> -->
-      <!-- <span id="busuanzi_value_page_pv"></span>次阅读 --></p>
-    </header>
-  </div>
-
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -296,15 +272,32 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
+          <header class="entry-header">
+            <h1 class="entry-title">Github+jsDelivr搭建自己的免费cdn</h1>
+            <p class="entry-census">聿舟&nbsp;·&nbsp;2020-8-21<!-- &nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p> --></p>
+
+            <hr>
+          </header>
+        
         <div class="entry-content">
-          <h1 id="Mac更新Safari书签图标"><a href="#Mac更新Safari书签图标" class="headerlink" title="Mac更新Safari书签图标"></a>Mac更新Safari书签图标</h1><ol>
-<li>打开Finder</li>
-<li>点击菜单栏Go</li>
-<li>按住option键会发现栏目中多出了Library</li>
-<li>进入Library/Safari/Touch Icons Cache/Images</li>
-<li>如果想全部更新，就删除全部图标，开启全局VPN后重启Safari即可</li>
-<li>如果想部分更新，参考<a href="https://www.zhihu.com/question/30099137" target="_blank" rel="noopener">https://www.zhihu.com/question/30099137</a></li>
+          <h2 id="Github-jsDelivr搭建自己的免费cdn"><a href="#Github-jsDelivr搭建自己的免费cdn" class="headerlink" title="Github+jsDelivr搭建自己的免费cdn"></a>Github+jsDelivr搭建自己的免费cdn</h2><p>由于我才搭好个人博客，就看到了 <a href="https://cungudafa.gitee.io/post/2a9.html" target="_blank" rel="noopener">https://cungudafa.gitee.io/post/2a9.html</a> 这篇文章教搭cdn， 我就照🐯画🐱照着操作一遍，并留个备忘。</p>
+<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><ol>
+<li>新建Github repo, 名字最好叫cdn</li>
+<li>将自己的img和js素材放进去（据说支持20M以内的图片、视频、js、css等）</li>
+<li>push以后点击releases， 按要求发布</li>
 </ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>使用jsDelivr引用</p>
+<ul>
+<li>模版<br><code>https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</code></li>
+</ul>
+<p>eg: <code>https://cdn.jsdelivr.net/gh/SunZezhou/cdn/images/wallpaper.jpg</code></p>
+<ul>
+<li>其中版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源</li>
+<li>据说可以加载任何Github发布、提交或分支</li>
+<li>据说可以使用某个范围内的版本，查看所有资源</li>
+<li>将“.min”添加到任何JS/CSS文件中以获取缩小版本，如果不存在，将为会自动生成 <code>https://cdn.jsdelivr.net/gh/user/repo@version/file/file.min.js</code></li>
+<li>不写最后的文件名，可以获得文件列表<code>https://cdn.jsdelivr.net/gh/user/repo@version/file/</code></li>
+</ul>
 
         </div>
         <!-- .entry-content -->
@@ -336,7 +329,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2020/08/21/github/" rel="prev">
+            <a href="/2020/08/21/Sakura添加live2d/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -344,7 +337,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                Github+jsDelivr搭建自己的免费cdn</h3>
+                Sakura添加live2d</h3>
                 <hr>
               </div>
             </a>
@@ -354,15 +347,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2020/08/21/写在开始之前/" rel="next">
+            <a href="/2020/08/21/Mac更新Safari书签图标/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/unnatural_death.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/images/unnatural_death.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/circuit_board.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/images/circuit_board.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                写在开始之前</h3>
+                Mac更新Safari书签图标</h3>
                 <hr>
               </div>
             </a>
@@ -372,11 +365,11 @@
       
       <!-- <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="/images/avatar.jpg" itemprop="image" alt="聿舟" height="70" width="70"></a>
+          <a href="https://sunzezhou.github.io" class="profile gravatar"><img src="/images/avatar.jpg" itemprop="image" alt="聿舟" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author">聿舟</a>
+            <a href="https://sunzezhou.github.io" itemprop="url" rel="author">聿舟</a>
             </h3>
           </div>
         </div>

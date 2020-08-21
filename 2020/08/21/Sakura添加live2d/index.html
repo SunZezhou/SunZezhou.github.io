@@ -23,7 +23,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Mac更新Safari书签图标 | Zezhou.Sun&#39;s Blog</title>
+  <title itemprop="name">Sakura添加live2d | Zezhou.Sun&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/yu.ico">
   
@@ -265,30 +265,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(/images/circuit_board.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/circuit_board.jpg">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      Mac更新Safari书签图标</h1>
-      <p class="entry-census">
-        <span>
-          <a href="">
-            <img src="/images/avatar.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="">聿舟</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2020-8-21
-        <!-- <span class="bull">·</span> -->
-      <!-- <span id="busuanzi_value_page_pv"></span>次阅读 --></p>
-    </header>
-  </div>
-
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -296,14 +272,27 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
+          <header class="entry-header">
+            <h1 class="entry-title">Sakura添加live2d</h1>
+            <p class="entry-census">聿舟&nbsp;·&nbsp;2020-8-21<!-- &nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p> --></p>
+
+            <hr>
+          </header>
+        
         <div class="entry-content">
-          <h1 id="Mac更新Safari书签图标"><a href="#Mac更新Safari书签图标" class="headerlink" title="Mac更新Safari书签图标"></a>Mac更新Safari书签图标</h1><ol>
-<li>打开Finder</li>
-<li>点击菜单栏Go</li>
-<li>按住option键会发现栏目中多出了Library</li>
-<li>进入Library/Safari/Touch Icons Cache/Images</li>
-<li>如果想全部更新，就删除全部图标，开启全局VPN后重启Safari即可</li>
-<li>如果想部分更新，参考<a href="https://www.zhihu.com/question/30099137" target="_blank" rel="noopener">https://www.zhihu.com/question/30099137</a></li>
+          <h1 id="Sakura添加live2d"><a href="#Sakura添加live2d" class="headerlink" title="Sakura添加live2d"></a>Sakura添加live2d</h1><p>继续模仿（抄）live2d的配置过程，更多参看<code>https://cungudafa.gitee.io/post/d214.html</code></p>
+<ol>
+<li>打开主目录/theme/Sakura/source/ </li>
+<li>git clone <a href="https://github.com/stevenjoezhang/live2d-widget.git" target="_blank" rel="noopener">https://github.com/stevenjoezhang/live2d-widget.git</a></li>
+<li>修改<code>autoload.js</code>, 取消<code>const live2d_path = &quot;/live2d-widget/&quot;;</code>行的注释，并注释它的上一行<code>const live2d_path = &quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;;</code></li>
+<li>在<code>/themes/sakura/layout/_partial/head.ejs</code>下添加<pre><code>&lt;!--自定义看板娘--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;/&gt;
+</code></pre></li>
+<li>在主目录<code>_config.yam</code>下添加<pre><code>live2d: ##自定义看板娘动画
+enable: true
+</code></pre></li>
 </ol>
 
         </div>
@@ -333,36 +322,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
           
-            <div class="post-nepre half previous">
+            <div class="post-nepre full next">
           
-            <a href="/2020/08/21/github/" rel="prev">
+            <a href="/2020/08/21/github/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Github+jsDelivr搭建自己的免费cdn</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2020/08/21/写在开始之前/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/unnatural_death.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/images/unnatural_death.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                写在开始之前</h3>
+                Github+jsDelivr搭建自己的免费cdn</h3>
                 <hr>
               </div>
             </a>
@@ -372,11 +344,11 @@
       
       <!-- <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="/images/avatar.jpg" itemprop="image" alt="聿舟" height="70" width="70"></a>
+          <a href="https://sunzezhou.github.io" class="profile gravatar"><img src="/images/avatar.jpg" itemprop="image" alt="聿舟" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author">聿舟</a>
+            <a href="https://sunzezhou.github.io" itemprop="url" rel="author">聿舟</a>
             </h3>
           </div>
         </div>
