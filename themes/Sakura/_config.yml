@@ -1,0 +1,128 @@
+# site name
+prefixName: 正在为论文秃头的  # 左上角站点名
+siteName: 聿舟              # 站点名后跟的名字
+# favicon and site master avatar
+favicon: /images/yu.ico    # 标签页logo
+avatar: /images/avatar.jpg     # 头像
+url: https://sunzezhou.github.io  # 头像链接
+description: Code Never Lies      # 个人签名
+cdn:      # 套用的CDN链接，后面有用，建议建立一个属于自己的图床，在后面的图片里 img:/icon/xxx.png 将被代替为 https://cdn.jsdelivr.net/gh/Natsuki-Kaede/Blog-Resources/ico
+pjax: 1
+# 1开启
+mathjax: 0
+
+notice: （2020.08.20）这是我新搭建的个人博客，客官有空常来玩啊～    # 公告，改为false公告会消失哦
+lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg  # 加载进度条
+
+menus:
+  Home: { path: /, fa: fa-fort-awesome faa-shake }
+  Archives: { path: /archives, fa: fa-archive faa-shake, submenus: { 
+    Tech: {path: /categories/Tech/, fa: fa-code }
+    # 生活: {path: /categories/生活/, fa: fa-file-text-o }, 
+    # 资源: {path: /categories/资源/, fa: fa-cloud-download }, 
+    # 随想: {path: /categories/随想/, fa: fa-commenting-o },
+    # 转载: {path: /categories/转载/, fa: fa-book }
+  } }
+  # 清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
+  #   书单: {path: /tags/悦读/, fa: fa-th-list faa-bounce }, 
+  #   番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
+  #   歌单: {path: /music/, fa: fa-headphones },
+  #   图集: {path: /tags/图集/, fa: fa-photo }
+  # } }
+  Academic: { path: /academic/, fa: fa-pencil-square-o faa-tada }
+  # 友人帐: { path: /links/, fa: fa-link faa-shake }
+  # 赞赏: { path: /donate/, fa: fa-heart faa-pulse }
+  About Me?: { path: /about/, fa: fa-leaf faa-wrench 
+  # , submenus: { 
+  #   我？: {path: /about/, fa: fa-meetup}, 
+  #   # 主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
+  #   # Lab: {path: /lab/, fa: fa-cogs },
+  # } 
+  }
+  # 客户端: { path: /client/, fa: fa-android faa-vertical }
+  RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
+
+
+# Home page sort type: -1: newer first，1: older first.
+homePageSortType: -1
+# Home page article shown number)
+homeArticleShown: 10
+# 背景图片 更好的修改
+bg:
+# 这里的背景图片设置支持API，也就是可以调用一些随机图片的API使用，如 https://random.52ecy.cn/randbg.php 已知出现的问题是，使用单个API不能及时更新图片 目前的解决方法是，加入多个相似API（相同的多复制几个不可以哦）
+  - /images/wallpaper.jpg
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp
+  # - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp
+
+# 背景图片样式 空 原图效果 filter-dim 阴影 filter-grid 横条 filter-dot 点点
+bgclass: filter-grid
+
+# startdash url, title, desc img
+startdash: 
+  - {url: /2020/08/21/写在开始之前/, title: 写在开始之前, desc: 本站主题, img: /images/unnatural_death.jpg}
+  - {url: https://sites.google.com/view/huikonglab/home, title: IMRL Lab, desc: 博主的实验室, img: /images/map.png}
+  # - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
+
+
+
+# your site build time or founded date
+siteBuildingTime: 08/20/2020
+
+#social  url, img PC端配置
+social:
+  Github: {url: http://github.com/SunZezhou, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg}
+  LinkedIn: {url: https://www.linkedin.com/in/sun-zezhou-孙泽舟-69b1551b2, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg}
+  GoogleScholar: {url: https://scholar.google.com/citations?user=9ScgH5kAAAAJ&hl=en, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/googlescholar.svg}
+  YouTube: {url: https://www.youtube.com/channel/UCa8CO_ifNw6qmroMSPpiHlw, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg}
+  Email: {url: http://sun_zezhou@njust.edu.cn, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg}
+  # sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
+  # wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
+  # zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
+  # wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
+  # wechat2: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
+
+#social  url, img 移动端配置
+msocial:
+  Github: {url: http://github.com/SunZezhou, fa: fa-github}
+  LinkedIn: {url: https://www.linkedin.com/in/sun-zezhou-孙泽舟-69b1551b2, fa: fa-linkedin}
+  GoogleScholar: {url: https://scholar.google.com/citations?user=9ScgH5kAAAAJ&hl=en, fa: fa-googlescholar}
+  YouTube: {url: https://www.youtube.com/channel/UCa8CO_ifNw6qmroMSPpiHlw, fa: fa-youtube}
+  Email: {url: http://sun_zezhou@njust.edu.cn, fa: fa-gmail}
+
+donate:
+  paypal: 
+  alipay: 
+  wechat: 
+  wechatSQ: 
+
+# 视频地址为https://cdn.jsdelivr.net/gh/honjun/hojun@1.2/Unbroken.mp4，配置如下
+movies:
+  url: 
+  # 多个视频用逗号隔开，随机获取。支持的格式目前已知MP4,Flv。其他的可以试下，不保证有用
+  name: 
+
+aplayer:    # 音乐播放器
+  id: 2660651585    # 这里是歌单ID（注意不要写成用户id，看准playlist后面的数字
+  server: netease   # 网易云
+  type: playlist
+  fixed: true       # 是否紧贴底部 true/false
+  autoplay: false   # 自动播放
+  loop: all         # 循环模式  all/one/none
+  order: random     # 循环顺序  random/list 
+  preload: auto     # 预加载 auto/metadata/none
+  volume: 0.7       # 初始音量 1-100 对应 0-1
+  mutex: true       # 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+  # 其他详情可去Aplayer官方Docs查看 https://aplayer.js.org/#/zh-Hans/
+
+# Valine 需要去LeanCloud注册账号，获取AppID和AppKey
+valine: false
+v_appId: 
+v_appKey: 
+# v_verify: true  # 开启Valine验证码 还要在 /Themes 中搜索sakura-app.js 打开搜索valine 在appKey下行插入 `verify: mashiro_option.v_verify,` 详见 https://blog.csdn.net/qq_23265583/article/details/105495554
+
+# 该用gitalk 详见 https://hacpai.com/article/1592060630720
