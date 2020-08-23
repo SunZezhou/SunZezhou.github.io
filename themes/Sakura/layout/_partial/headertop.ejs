@@ -27,8 +27,9 @@
                 </li>
               <% } else { %>
                 <li>
-                  <a href="<%= theme.social[i].url%>" target="_blank" class="social-github" title="<%- i %>">
+                  <a href="<%= theme.social[i].url%>" target="_blank" class="fa <%- theme.social[i].fa%>" title="<%- i %>">
                     <img src="<%- (theme.cdn || '') + theme.social[i].img%>">
+                    <!-- <a href="<%- theme.social[i].url%>" class="fa <%- theme.social[i].fa%> fa-lg" target="_blank" style="color: #<%- theme.social[i].color%>; margin-left:20px" title="<%- i %>" ></a> -->
                   </a>
                 </li>
               <% } %>

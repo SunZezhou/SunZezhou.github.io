@@ -6,13 +6,15 @@ favicon: /images/yu.ico    # 标签页logo
 avatar: /images/avatar.jpg     # 头像
 url: https://sunzezhou.github.io  # 头像链接
 description: Code Never Lies      # 个人签名
-cdn:  https://cdn.jsdelivr.net/gh/SunZezhou/cdn  # 套用的CDN链接，后面有用，建议建立一个属于自己的图床，在后面的图片里 img:/icon/xxx.png 将被代替为 https://cdn.jsdelivr.net/gh/Natsuki-Kaede/Blog-Resources/ico
+cdn:  
+# https://cdn.jsdelivr.net/gh/SunZezhou/cdn  # 套用的CDN链接，后面有用，建议建立一个属于自己的图床，在后面的图片里 img:/icon/xxx.png 将被代替为 https://cdn.jsdelivr.net/gh/Natsuki-Kaede/Blog-Resources/ico
 pjax: 1
 # 1开启
 mathjax: 0
 
 notice: （2020.08.20）这是我新搭建的个人博客，客官有空常来玩啊～    # 公告，改为false公告会消失哦
-lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg  # 加载进度条
+lazyloadImg: 
+# https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg  # 加载进度条
 
 menus:
   Home: { path: /, fa: fa-fort-awesome faa-shake }
@@ -75,11 +77,12 @@ siteBuildingTime: 08/20/2020
 
 #social  url, img PC端配置
 social:
-  Github: {url: http://github.com/SunZezhou, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg}
-  LinkedIn: {url: https://www.linkedin.com/in/sun-zezhou-孙泽舟-69b1551b2, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg}
-  GoogleScholar: {url: https://scholar.google.com/citations?user=9ScgH5kAAAAJ&hl=en, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/googlescholar.svg}
-  YouTube: {url: https://www.youtube.com/channel/UCa8CO_ifNw6qmroMSPpiHlw, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg}
-  Email: {url: http://sun_zezhou@njust.edu.cn, img: https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg}
+  # Github: {url: http://github.com/SunZezhou, fa: fa-github, color: 333}  # 可以配合headertop.ejs中的注释使用fa-awesome
+  Github: {url: http://github.com/SunZezhou, img: /images/github.svg}
+  LinkedIn: {url: https://www.linkedin.com/in/sun-zezhou-孙泽舟-69b1551b2, img: /images/linkedin.svg}
+  GoogleScholar: {url: https://scholar.google.com/citations?user=9ScgH5kAAAAJ&hl=en, img: /images/googlescholar.svg}
+  YouTube: {url: https://www.youtube.com/channel/UCa8CO_ifNw6qmroMSPpiHlw, img: /images/youtube.svg}
+  Email: {url: http://sun_zezhou@njust.edu.cn, img: /images/gmail.svg}
   # sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
   # wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
   # zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
