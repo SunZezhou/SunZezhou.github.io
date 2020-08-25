@@ -4128,13 +4128,6 @@ li.feature-2 {
     list-style:none;
     display:inline-block
 }
-.mtop-social_v2 {
-    height:32px;
-    margin-bottom:-15px;
-    margin-left:10px;
-    list-style:none;
-    display:inline-block
-}
 .top-social_v2 img {
     height:35px;
     width:35px;
@@ -4142,6 +4135,23 @@ li.feature-2 {
     background:transparent
 }
 .top-social_v2 li {
+    float:left;
+    margin-right:13px
+}
+.mtop-social_v2 {
+    height:32px;
+    margin-bottom:-15px;
+    margin-left:10px;
+    list-style:none;
+    display:inline-block
+}
+.mtop-social_v2 img {
+    height:35px;
+    width:35px;
+    padding:6px;
+    background:transparent
+}
+.mtop-social_v2 li {
     float:left;
     margin-right:13px
 }
