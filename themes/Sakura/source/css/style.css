@@ -4138,6 +4138,23 @@ li.feature-2 {
     float:left;
     margin-right:13px
 }
+.mtop-social_v2 {
+    height:32px;
+    margin-bottom:-15px;
+    margin-left:25px;
+    list-style:none;
+    /* display:inline-block */
+}
+.mtop-social_v2 img {
+    height:35px;
+    width:35px;
+    padding:6px;
+    background:transparent
+}
+.mtop-social_v2 li {
+    float:left;
+    margin-right:4px
+}
 .wechat {
     width:35px;
     height:35px;
