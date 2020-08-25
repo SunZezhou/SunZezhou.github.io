@@ -4126,7 +4126,7 @@ li.feature-2 {
     margin-bottom:-15px;
     margin-left:10px;
     list-style:none;
-    /* display:inline-block */
+    display:inline-block
 }
 .top-social_v2 img {
     height:35px;
@@ -4143,7 +4143,7 @@ li.feature-2 {
     margin-bottom:-15px;
     margin-left:10px;
     list-style:none;
-    display:inline-block
+    /* display:inline-block */
 }
 .mtop-social_v2 img {
     height:35px;
