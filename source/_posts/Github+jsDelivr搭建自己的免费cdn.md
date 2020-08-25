@@ -11,7 +11,7 @@ categories: Tech
 tags: Blog
 keywords:
 description:
-photos:
+photos: /images/cdn.jpg
 ---
 
 ## Github+jsDelivr搭建自己的免费cdn

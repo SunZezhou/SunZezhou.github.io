@@ -11,7 +11,7 @@ categories: Tech
 tags: Blog
 keywords:
 description:
-photos:
+photos: /images/live2d.jpg
 ---
 
 # Sakura添加live2d
