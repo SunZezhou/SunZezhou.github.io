@@ -948,7 +948,7 @@ hr {
     margin-bottom:1.5em
 }
 ul,ol {
-    margin:2em 0 1.5em 3em
+    margin:0 0 1.5em 3em
 }
 ul {
     list-style:disc
@@ -4141,7 +4141,7 @@ li.feature-2 {
 .mtop-social_v2 {
     height:32px;
     margin-bottom:-15px;
-    margin-left:10px;
+    margin-left:25px;
     list-style:none;
     /* display:inline-block */
 }
@@ -4153,7 +4153,7 @@ li.feature-2 {
 }
 .mtop-social_v2 li {
     float:left;
-    margin-right:13px
+    margin-right:4px
 }
 .wechat {
     width:35px;
