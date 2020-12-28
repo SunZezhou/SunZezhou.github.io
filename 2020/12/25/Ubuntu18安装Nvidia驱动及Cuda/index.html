@@ -23,7 +23,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: Tech | Zezhou.Sun&#39;s Blog</title>
+  <title itemprop="name">Ubuntu18安装Nvidia驱动及Cuda | Zezhou.Sun&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/yu.ico">
   
@@ -161,16 +161,16 @@
       </div>
     </div>
   </figure>
-  <!-- <div id="video-container" style="">
+  <div id="video-container" style="">
     <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
     </video>
-    <div id="video-btn" class="loadvideo videolive">
+    <!-- <div id="video-btn" class="loadvideo videolive">
     </div>
     <div id="video-add">
     </div>
     <div class="video-stu">
-    </div>
-  </div> -->
+    </div> -->
+  </div>
   <div class="headertop-down faa-float animated" onclick="headertop_down()">
     <span>
       <i class="fa fa-chevron-down" aria-hidden="true">
@@ -229,9 +229,23 @@
                   <ul class="sub-menu">
                     
                       <li>
-                        <a href="/categories/Tech/">
+                        <a href="/categories/Code/">
                           <i class="fa fa-code" aria-hidden="true"></i>
-                          Tech
+                          Code
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/Research/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          Research
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/thoughts/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          碎碎念
                         </a>
                       </li>
                     
@@ -256,237 +270,154 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-  </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">技术</h1>
-    <span class="cat-des">
-      <p>Tech</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">Ubuntu18安装Nvidia驱动及Cuda</h1>
+            <p class="entry-census">聿舟&nbsp;·&nbsp;2020-12-25<!-- &nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p> --></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <ol>
+<li>调整分辨率 setting -&gt; Display -&gt; 4k / 1.88</li>
+<li>sudo apt-get install vim nano </li>
+<li>Nvidia Driver<ul>
+<li>卸载之前的驱动 sudo apt-get remove nvidia-*</li>
+<li>检查推荐nvidia驱动版本 sudo ubuntu-drivers list</li>
+<li>检查GPU是否CUDA-Capable  lspci | grep -i nvidia</li>
+<li>sudo nano /etc/modprobe.d/blacklist.conf  末尾添加两行  blacklist nouveau  /  options nouveau modeset=0</li>
+<li>sudo update-initramfs -u 更新系统</li>
+<li>sudo reboot</li>
+<li>验证nouveau是否已禁用  lsmod | grep nouveau</li>
+<li>使用PPA仓库安装驱动 </li>
+<li>添加源： sudo add-apt-repository ppa:graphics-drivers/ppa</li>
+<li>更新源： sudo apt update</li>
+<li>软件自动识别并推荐 ubuntu-drivers devices</li>
+<li>sudo ubuntu-drivers autoinstall 安装并重启</li>
+<li>检查 sudo nvidia-smi / sudo nvidia-settings</li>
+</ul>
+</li>
+<li>Cuda<ul>
+<li>sudo chmod a+x cuda_10.0.130_410.48_linux.run</li>
+<li>sudo sh cuda_10.0.130_410.48_linux.run</li>
+<li>注意驱动选项不选</li>
+<li>在～/.bashrc 里 export PATH=$PATH:/usr/local/cuda/bin  /  export LD_LIBRARY_PATH=/usr/local/cuda-10.0/bin/lib64:$LD_LIBRARY_PATH // 10.2似乎没有/lib64</li>
+<li>source ~/.bashrc  再  nvcc –version看版本信息</li>
+<li>cd NVIDA_CUDA-10.2_SAMPLES 后 make -k 测试</li>
+<li>如遇报错：/sbin/ldconfig.real:/usr/local/cuda-11.0/targets/x86_64-linux/lib/libcudnn.so.0 is not a symbolic link</li>
+<li>sudo ldconfig -v | grep cuda  需要链接 libcudnn.so.8 -&gt; libcudnn.so.8.0.4</li>
+<li>sudo ln -sf /usr/local/cuda-11.0/targets/x86_64-linux/lib/llibcudnn.so.8.0.4 /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcudnn.so.8</li>
+</ul>
+</li>
+<li>Cudnn<ul>
+<li>官网下载对应cuda版本的cuDNN，分别下载Runtime/Developer/Code Samples _amd64.deb</li>
+<li>按顺序 sudo dpkg -i libcudnn / libcudnn-dev / libcudnn-doc</li>
+<li>cp -r /usr/src/cudnn_samples_v7/ $HOME</li>
+<li>cd $HOME/cudnn_samples_v7/mnistCUDNN</li>
+<li>make clean &amp;&amp; make</li>
+<li>./mnistCUDNN 成功会显示Test passed！</li>
+</ul>
+</li>
+<li>Anaconda3<ul>
+<li>bash Anaconda3-2018.12-Linux-x86_64.sh</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        <!-- .entry-content -->
+        <!-- <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="null"></li>
+                <li class="wechat-code"><img src="null"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div> -->
+        <!-- <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer>-->  <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/12/25/Velodyne雷达时间戳硬触发同步问题/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Velodyne雷达时间戳硬触发同步问题</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/09/10/Clion的console在debug模式下没有cout输出/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Clion的console在debug模式下没有cout输出</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Sakura添加live2d/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <!-- <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://sunzezhou.github.io" class="profile gravatar"><img src="/images/avatar.jpg" itemprop="image" alt="聿舟" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://sunzezhou.github.io" itemprop="url" rel="author">聿舟</a>
+            </h3>
+          </div>
         </div>
-        <img width="150" height="150" src="/images/live2d.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Sakura添加live2d/">
-    Sakura添加live2d</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Sakura添加live2d/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="/images/cdn.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-    Github+jsDelivr搭建自己的免费cdn</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Mac更新Safari书签图标/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="/images/circuit_board.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Mac更新Safari书签图标/">
-    Mac更新Safari书签图标</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Mac更新Safari书签图标/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section> -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Sakura添加live2d/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="/images/live2d.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Sakura添加live2d/">
-    Sakura添加live2d</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Sakura添加live2d/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="/images/cdn.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-    Github+jsDelivr搭建自己的免费cdn</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Github+jsDelivr搭建自己的免费cdn/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/21/Mac更新Safari书签图标/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="/images/circuit_board.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/21/Mac更新Safari书签图标/">
-    Mac更新Safari书签图标</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-21</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/21/Mac更新Safari书签图标/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -632,13 +563,13 @@ $(document).ready(function() {
  </div>
 </div>
 <canvas id="night-mode-cover"></canvas> 
-  <div class="changeSkin-gear no-select">
+  <!-- <div class="changeSkin-gear no-select">
   <div class="keys" id="setbtn"> 
    <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
      <i class="iconfont icon-gear inline-block rotating"></i> 
    </span>
   </div>
-</div>
+</div> -->
   <div id="mo-nav" class="">
   <div class="m-avatar">
     <img src="/images/avatar.jpg">
@@ -722,9 +653,23 @@ $(document).ready(function() {
           <ul class="sub-menu">
             
               <li>
-                <a href="/categories/Tech/">
+                <a href="/categories/Code/">
                   <i class="fa fa-code" aria-hidden="true"></i>
-                  Tech
+                  Code
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/Research/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  Research
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/thoughts/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  碎碎念
                 </a>
               </li>
             
